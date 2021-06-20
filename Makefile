@@ -1,6 +1,6 @@
 PHP := `which php`
 CURL := `which curl`
-COMPOSER = ./composer.phar
+COMPOSER := /usr/local/bin/composer
 PHPUNIT = ./vendor/bin/phpunit
 PHPCONSOLE = ./bin/console
 SYMFONY = `which symfony`
@@ -13,8 +13,9 @@ $(SYMFONY):
 
 $(COMPOSER):
 	$(CURL) -sS https://getcomposer.org/installer -o composer-setup.php
-	$(PHP) composer-setup.php --version=1.10.22
+	$(PHP) composer-setup.php
 	chmod 744 $@
+	mv composer.phar /usr/local/bin/composer
 	$(RM) composer-setup.php
 
 all: cache clean install tests
@@ -32,7 +33,7 @@ cache: $(PHPCONSOLE)
 	$(PHPCONSOLE) cache:clear
 
 clean:
-	$(RM) -r $(COMPOSER) build vendor composer.lock .php_cs.cache .phpunit.result.cache
+	$(RM) -r build vendor composer.lock .php_cs.cache .phpunit.result.cache
 
 server:
 	$(SYMFONY) serve --no-tls
