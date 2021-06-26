@@ -1,1 +1,0 @@
-# symfony5-skel

@@ -1,6 +1,6 @@
 <?php
 
-use Cmas\App\Apps\Kernel;
+use App\Kernel;
 
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 

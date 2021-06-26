@@ -1,6 +1,6 @@
 <?php
 
-namespace Cmas\App\Apps;
+namespace App;
 
 use Symfony\Bundle\FrameworkBundle\Kernel\MicroKernelTrait;
 use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
