@@ -1,0 +1,4 @@
+api.context1:
+  path: /api/context1
+  controller: Cmas\MyApp\Apps\api\Controllers\Context1::actionIndex
+  methods: ['GET']
