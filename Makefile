@@ -5,7 +5,7 @@ PHPUNIT = ./vendor/bin/phpunit
 PHPCONSOLE = ./bin/console
 SYMFONY = `which symfony`
 
-.PHONY: all install clean cache
+.PHONY: require all install clean cache
 
 require:
 	$(SYMFONY)
@@ -22,6 +22,7 @@ $(COMPOSER):
 	$(PHP) composer-setup.php --version=1.10.22
 	chmod 744 $@
 	$(RM) composer-setup.php
+	mv composer.phar /usr/local/bin/composer
 
 all: cache clean install tests
 
