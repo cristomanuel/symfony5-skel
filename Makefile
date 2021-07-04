@@ -19,7 +19,7 @@ $(SYMFONY):
 
 $(COMPOSER):
 	$(CURL) -sS https://getcomposer.org/installer -o composer-setup.php
-	$(PHP) composer-setup.php --version=1.10.22
+	$(PHP) composer-setup.php
 	chmod 744 $@
 	$(RM) composer-setup.php
 	mv composer.phar /usr/local/bin/composer
