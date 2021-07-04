@@ -5,13 +5,15 @@ declare(strict_types=1);
 namespace Cmas\MyApp\Apps\api\Controllers\Context1;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class Context1Controller extends AbstractController
 {
-    public function getIndex(Request $request) : JsonResponse
+    private const HELLO_WORLD = ["message" => "Hello world"] ;
+
+    public function getIndex(Request $request) : Response
     {
-        return new JsonResponse(json_encode(['message' => 'Hello world'], JSON_THROW_ON_ERROR), 200) ;
+        return new Response(json_encode(self::HELLO_WORLD),Response::HTTP_OK) ;
     }
 }
